@@ -1,0 +1,27 @@
+{
+  "name": "webdev2_cw2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArturN31/WebDev2_CW2.git"
+  },
+  "author": "Artur Nowakowski",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ArturN31/WebDev2_CW2/issues"
+  },
+  "homepage": "https://github.com/ArturN31/WebDev2_CW2#readme",
+  "dependencies": {
+    "bootstrap": "^5.1.3",
+    "express": "^4.17.3",
+    "mustache": "^4.2.0",
+    "mustache-express": "^1.3.2",
+    "nodemon": "^2.0.15",
+    "path": "^0.12.7"
+  }
+}
