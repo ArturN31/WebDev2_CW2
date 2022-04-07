@@ -1,13 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Staff login</title>
+    {{>header}}
+    <title>Homepage</title>
 </head>
 <body>
-    <h1>Staff Login</h1>
-    <p>template staff login</p>
+    {{>navbar}}
+    <div class="container-sm container-customised py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-12" style="max-width: 700px;">
+                <h1 class="d-flex justify-content-center">Login</h1>
+                {{>login}}
+            </div>
+        </div>
+    </div>
+    {{>footer}}
 </body>
 </html>

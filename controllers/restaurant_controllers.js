@@ -1,13 +1,19 @@
 exports.homepage = function(req, res) {
-    res.render('homepage');
+    res.render('homepage', {
+        homepage: 'class="nav-link lead active"', //variable for setting navbar active class when rendering template so that the current page is highlighted on navbar
+    });
 }
 
 exports.menu = function(req, res) {
-    res.render('menu');
+    res.render('menu', {
+        menu: 'class="nav-link lead active"',
+    });
 }
 
 exports.about_us = function(req, res) {
-    res.render('about_us');
+    res.render('about_us', {
+        about_us: 'class="nav-link lead active"',
+    });
 }
 
 exports.staff_login = function(req, res) {

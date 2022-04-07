@@ -6,9 +6,41 @@
 </head>
 <body>
     {{>navbar}}
-    <div class="container py-5">
-        <div class="row">
-            <h1>About us</h1>
+    <div class="container container-customised py-5">
+        <div class="row d-flex justify-content-center">
+            {{>welcome}}
+        </div>
+        <div class="row d-flex justify-content-center">
+            <div class="col-lg-5">
+                <div class="card my-4">
+                    <div class="card-body py-2">
+                        <h5 class="card-title d-flex justify-content-center">Our philosophy</h5>
+                        <hr>
+                        <p>Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card my-4">
+                    <div class="card-body py-2">
+                        <h5 class="card-title d-flex justify-content-center">Contact details</h5>
+                        <hr>
+                        <table class="d-flex justify-content-around">
+                            <tr class="border-bottom">
+                                <td class="align-top px-4 py-2">Address:</td>
+                                <td class="px-2 py-2">
+                                    <p>Cowcaddens Rd,</p>
+                                    <p>Glasgow, G4 0BA</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="px-2 py-2">Phone number:</td>
+                                <td class="px-2 py-2">01234 567890</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     {{>footer}}

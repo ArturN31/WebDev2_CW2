@@ -6,9 +6,22 @@
 </head>
 <body>
     {{>navbar}}
-    <div class="container py-5">
-        <div class="row">
-            <h1>Homepage</h1>
+    <div class="container container-customised py-5">
+        <div class="row d-flex justify-content-center">
+            {{>carousel_homepage}}
+        </div>
+        <div class="row d-flex justify-content-center">
+            {{>welcome}}
+            <div class="col-xl-2 order-lg-12 d-flex justify-content-center">
+                <div class="card my-4">
+                    <div class="card-body py-2">
+                        <h5 class="card-title d-flex justify-content-center">Check our menu</h5>
+                        <h6 class="card-subtitle mb-2 text-muted d-flex justify-content-center">Lunch/Dinner dishes</h6>
+                        <hr>
+                        <a href="/menu" class="btn btn-primary d-flex justify-content-center">Menu</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     {{>footer}}

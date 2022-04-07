@@ -1,0 +1,106 @@
+/* BAR ABOVE NAVBAR */
+#navbar-top {
+    height: 100px;
+    background-color: #F06449; /* Orange Soda - colour */
+    font-family: 'Handlee', cursive;
+}
+
+body {
+    background-color: #EDE6E3;
+}
+
+/* TEXT */
+.lato-font {
+    font-family: 'Lato', sans-serif;
+}
+
+.orange-text {
+    color: #F06449; /* Orange Soda - colour */
+}
+
+.teal-blue-text {
+    color: #41778B; /* Teal Blue - colour */
+}
+/* EOF TEXT */
+
+/* MAIN BODY */
+.container-customised {
+    background-color: #dbdbdb;
+    border-left: 1px solid rgb(7, 30, 34, 0.15);
+    border-right: 1px solid rgb(7, 30, 34, 0.15); 
+}
+
+/* HOMEPAGE AND ABOUT US WELCOME JUMBOTRON */
+.jumbotron {
+    border-radius: 10px;
+    border: 1px solid #071E22;
+    font-family: 'Handlee', cursive;
+    text-align: center;
+}
+
+/* HOMEPAGE AND ABOUT US CARD */
+.card {
+    border-radius: 10px;
+    border: 1px solid #071E22;
+}
+
+/* CAROUSEL */
+.carousel-inner {
+    border-radius: 10px;
+    border: 1px solid #071E22;
+}
+
+.caousel > img {
+    border-radius: 10px;
+}
+
+@media only screen and (max-width: 2560px) {
+    #carousel-custom {
+      width: 50%;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #carousel-custom {
+      width: 69%;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #carousel-custom {
+      width: 100%;
+    }
+}
+/* EOF CAROUSEL */
+
+/* MENU CARD */
+.card-menu {
+    padding: 0px;
+    width: 35rem;
+}
+
+.card-img-top {
+    border-radius: 10px 10px 0px 0px;
+}
+/* EOF MENU CARD */
+
+/* ADD NEW DISH */
+#new-dish-form {
+    border-radius: 10px;
+}
+
+/* FOOTER */
+.vertical-center-footer {
+    display: grid;
+    align-items: center;
+}
+
+footer p {
+    text-align: center;
+}
+
+.footer-hr {
+    opacity: 70%;
+    color: #F06449;
+}
+/* EOF FOOTER */
