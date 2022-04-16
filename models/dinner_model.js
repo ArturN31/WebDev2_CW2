@@ -46,7 +46,7 @@ class dinner_menu {
             dish_description: 'Pan fried steak with crispy roasted in duck fat potatoes.',
             dish_ingredients: 'Sirloin steak, potatoes, salt, pepper, garlic granules, thyme, duck fat.',
             dish_allergens: 'N/A',
-            dish_category: 'Mains',
+            dish_category: 'Main Course',
             dish_price: 18.45,
             dish_available: 'Yes'
         });

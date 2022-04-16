@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     {{>header}}
-    <title>Lunch menu - Sandwiches</title>
+    <title>Dinner menu - Main Course</title>
 </head>
 <body>
     {{>navbar}}
@@ -10,7 +10,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-6">
                 <table class="table table-bordered border-dark">
-                    <h5 class="d-flex justify-content-center">Sandwiches</h5>
+                    <h5 class="d-flex justify-content-center">Main Course</h5>
                     <tr>
                         <th>Dish name:</th>
                         <th>Description:</th>
@@ -18,7 +18,7 @@
                         <th>Allergens:</th>
                         <th>Price:</th>
                     </tr>
-                    {{#sandwiches}}
+                    {{#main_course}}
                     <tr>
                         <td>{{dish_name}}</td>
                         <td>{{dish_description}}</td>
@@ -26,13 +26,13 @@
                         <td>{{dish_allergens}}</td>
                         <td>&#163;{{dish_price}}</td>
                     </tr>
-                    {{/sandwiches}}
+                    {{/main_course}}
                 </table>
-                {{^sandwiches}}
+                {{^main_course}}
                     <div class="alert alert-info" role="alert">
                         No entries yet.
                     </div>
-                {{/sandwiches}}
+                {{/main_course}}
             </div>
         </div>
     </div>

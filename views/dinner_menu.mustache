@@ -10,59 +10,17 @@
         <div class="row">
             <!-- APPETIZERS COLUMN -->
             <div class="col-6">
-                <table class="table table-bordered border-dark">
-                    <h5 class="d-flex justify-content-center">Appetizers</h5>
-                    <tr>
-                        <th>Dish name:</th>
-                        <th>Description:</th>
-                        <th>Ingredients:</th>
-                        <th>Allergens:</th>
-                        <th>Price:</th>
-                    </tr>
-                    {{#appetizers}}
-                    <tr>
-                        <td>{{dish_name}}</td>
-                        <td>{{dish_description}}</td>
-                        <td>{{dish_ingredients}}</td>
-                        <td>{{dish_allergens}}</td>
-                        <td>&#163;{{dish_price}}</td>
-                    </tr>
-                    {{/appetizers}}
-                </table>
-                {{^appetizers}}
-                    <div class="alert alert-info" role="alert">
-                        No entries yet.
-                    </div>
-                {{/appetizers}}
+                <div class="card">
+                    <p class="d-flex justify-content-center">View our <a href="/dinner_menu/dinner_appetizers">Appetizers</a></p>
+                </div>
             </div>
             <!-- EOF APPETIZERS COLUMN -->
 
             <!-- SIDES COLUMN -->
             <div class="col-6">
-                <table class="table table-bordered border-dark">
-                    <h5 class="d-flex justify-content-center">Sides</h5>
-                    <tr>
-                        <th>Dish name:</th>
-                        <th>Description:</th>
-                        <th>Ingredients:</th>
-                        <th>Allergens:</th>
-                        <th>Price:</th>
-                    </tr>
-                    {{#sides}}
-                    <tr>
-                        <td>{{dish_name}}</td>
-                        <td>{{dish_description}}</td>
-                        <td>{{dish_ingredients}}</td>
-                        <td>{{dish_allergens}}</td>
-                        <td>&#163;{{dish_price}}</td>
-                    </tr>
-                    {{/sides}}
-                </table>
-                {{^sides}}
-                    <div class="alert alert-info" role="alert">
-                        No entries yet.
-                    </div>
-                {{/sides}}
+                <div class="card">
+                    <p class="d-flex justify-content-center">View our <a href="/dinner_menu/dinner_sides">Sides</a></p>
+                </div>
             </div>
             <!-- EOF SIDES COLUMN -->
         </div>
@@ -70,30 +28,9 @@
         <div class="row">
             <!-- MAIN COURSE COLUMN -->
             <div class="col-12">
-                <table class="table table-bordered border-dark">
-                    <h5 class="d-flex justify-content-center">Main Course</h5>
-                    <tr>
-                        <th>Dish name:</th>
-                        <th>Description:</th>
-                        <th>Ingredients:</th>
-                        <th>Allergens:</th>
-                        <th>Price:</th>
-                    </tr>
-                    {{#main_course}}
-                    <tr>
-                        <td>{{dish_name}}</td>
-                        <td>{{dish_description}}</td>
-                        <td>{{dish_ingredients}}</td>
-                        <td>{{dish_allergens}}</td>
-                        <td>&#163;{{dish_price}}</td>
-                    </tr>
-                    {{/main_course}}
-                </table>
-                {{^main_course}}
-                    <div class="alert alert-info" role="alert">
-                        No entries yet.
-                    </div>
-                {{/main_course}}
+                <div class="card">
+                    <p class="d-flex justify-content-center">View our <a href="/dinner_menu/dinner_main_course">Main Course</a></p>
+                </div>
             </div>
             <!-- EOF MAIN COURSE COLUMN -->
         </div>
@@ -101,59 +38,17 @@
         <div class="row">
             <!-- DESSERTS COLUMN -->
             <div class="col-6">
-                <table class="table table-bordered border-dark">
-                    <h5 class="d-flex justify-content-center">Desserts</h5>
-                    <tr>
-                        <th>Dish name:</th>
-                        <th>Description:</th>
-                        <th>Ingredients:</th>
-                        <th>Allergens:</th>
-                        <th>Price:</th>
-                    </tr>
-                    {{#desserts}}
-                    <tr>
-                        <td>{{dish_name}}</td>
-                        <td>{{dish_description}}</td>
-                        <td>{{dish_ingredients}}</td>
-                        <td>{{dish_allergens}}</td>
-                        <td>&#163;{{dish_price}}</td>
-                    </tr>
-                    {{/desserts}}
-                </table>
-                {{^desserts}}
-                    <div class="alert alert-info" role="alert">
-                        No entries yet.
-                    </div>
-                {{/desserts}}
+                <div class="card">
+                    <p class="d-flex justify-content-center">View our <a href="/dinner_menu/dinner_desserts">Desserts</a></p>
+                </div>
             </div>
             <!-- EOF SANDWICHES COLUMN -->
 
             <!-- BEVERAGES COLUMN -->
             <div class="col-6">
-                <table class="table table-bordered border-dark">
-                    <h5 class="d-flex justify-content-center">Beverages</h5>
-                    <tr>
-                        <th>Dish name:</th>
-                        <th>Description:</th>
-                        <th>Ingredients:</th>
-                        <th>Allergens:</th>
-                        <th>Price:</th>
-                    </tr>
-                    {{#beverages}}
-                    <tr>
-                        <td>{{dish_name}}</td>
-                        <td>{{dish_description}}</td>
-                        <td>{{dish_ingredients}}</td>
-                        <td>{{dish_allergens}}</td>
-                        <td>&#163;{{dish_price}}</td>
-                    </tr>
-                    {{/beverages}}
-                </table>
-                {{^beverages}}
-                    <div class="alert alert-info" role="alert">
-                        No entries yet.
-                    </div>
-                {{/beverages}}
+                <div class="card">
+                    <p class="d-flex justify-content-center">View our <a href="/dinner_menu/dinner_beverages">Beverages</a></p>
+                </div>
             </div>
             <!-- EOF BEVERAGES COLUMN -->
         </div>

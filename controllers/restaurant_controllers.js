@@ -83,25 +83,79 @@ exports.lunch_menu_beverages = function(req, res) {
 }
 
 exports.dinner_menu = function(req, res) {
+    res.render('dinner_menu', {
+        menu: 'class="nav-link lead active"',
+    });
+}
+
+exports.dinner_menu_appetizers = function(req, res) {
     dinner_db.getAppetizers() //return Appetizers
+        .then((appetizers) => {
+            res.render('dinner_menu_appetizers', {
+                menu: 'class="nav-link lead active"',
+                'appetizers': appetizers
+            });
+            console.log('promise resolved - appetizers entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - appetizers entries not displayed', err);
+        })
+}
+
+exports.dinner_menu_sides = function(req, res) {
     dinner_db.getSides() //return Sides
+        .then((sides) => {
+            res.render('dinner_menu_sides', {
+                menu: 'class="nav-link lead active"',
+                'sides': sides
+            });
+            console.log('promise resolved - sides entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - sides entries not displayed', err);
+        })
+}
+
+exports.dinner_menu_main_course = function(req, res) {
     dinner_db.getMainCourse() //return Main Course
+        .then((main_course) => {
+            res.render('dinner_menu_main_course', {
+                menu: 'class="nav-link lead active"',
+                'main_course': main_course
+            });
+            console.log('promise resolved - main_course entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - main_course entries not displayed', err);
+        })
+}
+
+exports.dinner_menu_desserts = function(req, res) {
     dinner_db.getDesserts() //return Desserts
+        .then((desserts) => {
+            res.render('dinner_menu_desserts', {
+                menu: 'class="nav-link lead active"',
+                'desserts': desserts
+            });
+            console.log('promise resolved - desserts entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - desserts entries not displayed', err);
+        })
+}
+
+exports.dinner_menu_beverages = function(req, res) {
     dinner_db.getBeverages() //return Beverages
-        .then((list) => {
-                res.render('dinner_menu', {
-                    menu: 'class="nav-link lead active"',
-                    'appetizers': list,
-                    'sides': list,
-                    'main_course': list,
-                    'desserts': list,
-                    'beverages': list
-                });
-                console.log('promise resolved - dinner_menu entries displayed');
-            })
-            .catch((err) => {
-            console.log('promise rejected - dinner_menu entries not displayed', err);
-            })
+        .then((beverages) => {
+            res.render('dinner_menu_beverages', {
+                menu: 'class="nav-link lead active"',
+                'beverages': beverages
+            });
+            console.log('promise resolved - beverages entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - beverages entries not displayed', err);
+        })
 }
 
 exports.about_us = function(req, res) {
