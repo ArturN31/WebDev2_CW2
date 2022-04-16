@@ -21,30 +21,44 @@ exports.menu = function(req, res) {
 }
 
 exports.lunch_menu = function(req, res) {
-    lunch_db.getAllEntries() //return entries
+    lunch_db.getLunchSpecials() //return Lunch specials
+    lunch_db.getSandwiches() //return sandwiches
+    lunch_db.getSalads() //return salads
+    lunch_db.getBeverages() //return beverages
         .then((list) => {
                 res.render('lunch_menu', {
                     menu: 'class="nav-link lead active"',
-                    'lunch_menu_entries': list
+                    'lunch_specials': list,
+                    'sandwiches': list,
+                    'salads': list,
+                    'beverages': list
                 });
-                console.log('promise resolved');
+                console.log('promise resolved - lunch_menu entries displayed');
             })
             .catch((err) => {
-            console.log('promise rejected', err);
+            console.log('promise rejected - lunch_menu entries not displayed', err);
             })
 }
 
 exports.dinner_menu = function(req, res) {
-    dinner_db.getAllEntries() //return entries
+    dinner_db.getAppetizers() //return Appetizers
+    dinner_db.getSides() //return Appetizers
+    dinner_db.getMainCourse() //return Appetizers
+    dinner_db.getDesserts() //return Appetizers
+    dinner_db.getBeverages() //return Appetizers
         .then((list) => {
                 res.render('dinner_menu', {
                     menu: 'class="nav-link lead active"',
-                    'dinner_menu_entries': list
+                    'appetizers': list,
+                    'sides': list,
+                    'main_course': list,
+                    'desserts': list,
+                    'beverages': list
                 });
-                console.log('promise resolved');
+                console.log('promise resolved - dinner_menu entries displayed');
             })
             .catch((err) => {
-            console.log('promise rejected', err);
+            console.log('promise rejected - dinner_menu entries not displayed', err);
             })
 }
 
