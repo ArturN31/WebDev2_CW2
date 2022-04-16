@@ -5,6 +5,10 @@ const controller = require('../controllers/restaurant_controllers.js'); //import
 router.get("/", controller.homepage);
 router.get("/menu", controller.menu);
 router.get("/lunch_menu", controller.lunch_menu);
+router.get('/lunch_menu/lunch_specials', controller.lunch_menu_specials);
+router.get('/lunch_menu/lunch_sandwiches', controller.lunch_menu_sandwiches);
+router.get('/lunch_menu/lunch_salads', controller.lunch_menu_salads);
+router.get('/lunch_menu/lunch_beverages', controller.lunch_menu_beverages);
 router.get("/dinner_menu", controller.dinner_menu);
 router.get("/about_us", controller.about_us);
 router.get("/staff_login", controller.staff_login);

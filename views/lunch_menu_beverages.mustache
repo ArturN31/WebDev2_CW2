@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <title>Homepage</title>
+</head>
+<body>
+    {{>navbar}}
+    <div class="container container-customised py-5">
+        <div class="row d-flex justify-content-center">
+            <div class="col-6">
+                <table class="table table-bordered border-dark">
+                    <h5 class="d-flex justify-content-center">Beverages</h5>
+                    <tr>
+                        <th>Dish name:</th>
+                        <th>Description:</th>
+                        <th>Ingredients:</th>
+                        <th>Allergens:</th>
+                        <th>Price:</th>
+                    </tr>
+                    {{#beverages}}
+                    <tr>
+                        <td>{{dish_name}}</td>
+                        <td>{{dish_description}}</td>
+                        <td>{{dish_ingredients}}</td>
+                        <td>{{dish_allergens}}</td>
+                        <td>&#163;{{dish_price}}</td>
+                    </tr>
+                    {{/beverages}}
+                </table>
+                {{^beverages}}
+                    <div class="alert alert-info" role="alert">
+                        No entries yet.
+                    </div>
+                {{/beverages}}
+            </div>
+        </div>
+    </div>
+    {{>footer}}
+</body>
+</html>
