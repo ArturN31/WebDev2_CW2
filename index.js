@@ -17,6 +17,7 @@ app.use(express.static(public));
 const mustache = require('mustache-express');
 app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
+app.set('views', __dirname+'/views/');
 
 //routes
 const router = require('./routes/restaurant_routes'); //import router

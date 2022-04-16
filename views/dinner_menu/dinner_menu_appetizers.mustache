@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {{>header}}
-    <title>Lunch menu - Salads</title>
+    {{>partials/header}}
+    <title>Dinner menu - Appetizers</title>
 </head>
 <body>
-    {{>navbar}}
+    {{>partials/navbar}}
     <div class="container container-customised py-5">
         <div class="row d-flex justify-content-center">
             <div class="col-6">
                 <table class="table table-bordered border-dark">
-                    <h5 class="d-flex justify-content-center">Salads</h5>
+                    <h5 class="d-flex justify-content-center">Appetizers</h5>
                     <tr>
                         <th>Dish name:</th>
                         <th>Description:</th>
@@ -18,7 +18,7 @@
                         <th>Allergens:</th>
                         <th>Price:</th>
                     </tr>
-                    {{#salads}}
+                    {{#appetizers}}
                     <tr>
                         <td>{{dish_name}}</td>
                         <td>{{dish_description}}</td>
@@ -26,16 +26,16 @@
                         <td>{{dish_allergens}}</td>
                         <td>&#163;{{dish_price}}</td>
                     </tr>
-                    {{/salads}}
+                    {{/appetizers}}
                 </table>
-                {{^salads}}
+                {{^appetizers}}
                     <div class="alert alert-info" role="alert">
                         No entries yet.
                     </div>
-                {{/salads}}
+                {{/appetizers}}
             </div>
         </div>
     </div>
-    {{>footer}}
+    {{>partials/footer}}
 </body>
 </html>

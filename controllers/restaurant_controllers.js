@@ -21,7 +21,7 @@ exports.menu = function(req, res) {
 }
 
 exports.lunch_menu = function(req, res) {
-    res.render('lunch_menu', {
+    res.render('lunch_menu/lunch_menu', {
         menu: 'class="nav-link lead active"',
     });
 }
@@ -29,7 +29,7 @@ exports.lunch_menu = function(req, res) {
 exports.lunch_menu_specials = function(req, res) {
     lunch_db.getLunchSpecials() //return Lunch specials
         .then((specials) => {
-            res.render('lunch_menu_specials', {
+            res.render('lunch_menu/lunch_menu_specials', {
                 menu: 'class="nav-link lead active"',
                 'lunch_specials': specials
             });
@@ -43,7 +43,7 @@ exports.lunch_menu_specials = function(req, res) {
 exports.lunch_menu_sandwiches = function(req, res) {
     lunch_db.getSandwiches() //return sandwiches
         .then((sandwiches) => {
-            res.render('lunch_menu_sandwiches', {
+            res.render('lunch_menu/lunch_menu_sandwiches', {
                 menu: 'class="nav-link lead active"',
                 'sandwiches': sandwiches
             });
@@ -57,7 +57,7 @@ exports.lunch_menu_sandwiches = function(req, res) {
 exports.lunch_menu_salads = function(req, res) {
     lunch_db.getSalads() //return salads
         .then((salads) => {
-            res.render('lunch_menu_salads', {
+            res.render('lunch_menu/lunch_menu_salads', {
                 menu: 'class="nav-link lead active"',
                 'salads': salads
             });
@@ -71,7 +71,7 @@ exports.lunch_menu_salads = function(req, res) {
 exports.lunch_menu_beverages = function(req, res) {
     lunch_db.getBeverages() //return beverages
         .then((beverages) => {
-            res.render('lunch_menu_beverages', {
+            res.render('lunch_menu/lunch_menu_beverages', {
                 menu: 'class="nav-link lead active"',
                 'beverages': beverages
             });
@@ -83,7 +83,7 @@ exports.lunch_menu_beverages = function(req, res) {
 }
 
 exports.dinner_menu = function(req, res) {
-    res.render('dinner_menu', {
+    res.render('dinner_menu/dinner_menu', {
         menu: 'class="nav-link lead active"',
     });
 }
@@ -91,7 +91,7 @@ exports.dinner_menu = function(req, res) {
 exports.dinner_menu_appetizers = function(req, res) {
     dinner_db.getAppetizers() //return Appetizers
         .then((appetizers) => {
-            res.render('dinner_menu_appetizers', {
+            res.render('dinner_menu/dinner_menu_appetizers', {
                 menu: 'class="nav-link lead active"',
                 'appetizers': appetizers
             });
@@ -105,7 +105,7 @@ exports.dinner_menu_appetizers = function(req, res) {
 exports.dinner_menu_sides = function(req, res) {
     dinner_db.getSides() //return Sides
         .then((sides) => {
-            res.render('dinner_menu_sides', {
+            res.render('dinner_menu/dinner_menu_sides', {
                 menu: 'class="nav-link lead active"',
                 'sides': sides
             });
@@ -119,7 +119,7 @@ exports.dinner_menu_sides = function(req, res) {
 exports.dinner_menu_main_course = function(req, res) {
     dinner_db.getMainCourse() //return Main Course
         .then((main_course) => {
-            res.render('dinner_menu_main_course', {
+            res.render('dinner_menu/dinner_menu_main_course', {
                 menu: 'class="nav-link lead active"',
                 'main_course': main_course
             });
@@ -133,7 +133,7 @@ exports.dinner_menu_main_course = function(req, res) {
 exports.dinner_menu_desserts = function(req, res) {
     dinner_db.getDesserts() //return Desserts
         .then((desserts) => {
-            res.render('dinner_menu_desserts', {
+            res.render('dinner_menu/dinner_menu_desserts', {
                 menu: 'class="nav-link lead active"',
                 'desserts': desserts
             });
@@ -147,7 +147,7 @@ exports.dinner_menu_desserts = function(req, res) {
 exports.dinner_menu_beverages = function(req, res) {
     dinner_db.getBeverages() //return Beverages
         .then((beverages) => {
-            res.render('dinner_menu_beverages', {
+            res.render('dinner_menu/dinner_menu_beverages', {
                 menu: 'class="nav-link lead active"',
                 'beverages': beverages
             });
@@ -165,21 +165,21 @@ exports.about_us = function(req, res) {
 }
 
 exports.staff_login = function(req, res) {
-    res.render('staff_login');
+    res.render('staff/staff_login');
 }
 
 exports.staff_screen = function(req, res) {
-    res.render('staff_screen');
+    res.render('staff/staff_screen');
 }
 
 exports.staff_new_dish = function(req, res) {
-    res.render('staff_new_dish');
+    res.render('staff/staff_new_dish');
 }
 
 exports.staff_edit_menu = function(req, res) {
-    res.render('staff_edit_menu');
+    res.render('staff/staff_edit_menu');
 }
 
 exports.staff_edit_dish = function(req, res) {
-    res.render('staff_edit_dish');
+    res.render('staff/staff_edit_dish');
 }
