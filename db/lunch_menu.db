@@ -1,0 +1,2 @@
+{"_id":1,"dish_name":"Scrambled eggs","dish_description":"Eggs scrambled on a pan.","dish_ingredients":"Eggs, butter, salt, pepper.","dish_alergens":"N/A","dish_category":"Mains","dish_price":2.5,"dish_available":"Yes"}
+{"_id":2,"dish_name":"Beans on  toast","dish_description":"Beans poured on a toasted white bread","dish_ingredients":"Beans in tomatoe sauce, white bread, salt, pepper.","dish_alergens":"N/A","dish_category":"Mains","dish_price":4.5,"dish_available":"Yes"}

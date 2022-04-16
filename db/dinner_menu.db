@@ -1,0 +1,2 @@
+{"_id":1,"dish_name":"Fish and chips","dish_description":"Deep fried battered cod along with chips.","dish_ingredients":"Batter, cod, chips, salt, pepper","dish_alergens":"N/A","dish_category":"Mains","dish_price":10.75,"dish_available":"Yes"}
+{"_id":2,"dish_name":"Steak and roasted potatoes","dish_description":"Pan fried steak with crispy roasted in duck fat potatoes.","dish_ingredients":"Sirloin steak, potatoes, salt, pepper, garlic granules, thyme, duck fat.","dish_alergens":"N/A","dish_category":"Mains","dish_price":18.45,"dish_available":"Yes"}

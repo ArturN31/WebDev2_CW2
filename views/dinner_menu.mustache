@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>header}}
+    <title>Lunch menu</title>
+</head>
+<body>
+    {{>navbar}}
+    <div class="container container-customised py-5">
+        <table class="table">
+            <tr>
+                <th>Dish name:</th>
+                <th>Description:</th>
+                <th>Ingredients:</th>
+                <th>Alergerns:</th>
+                <th>Price:</th>
+            </tr>
+            {{#dinner_menu_entries}}
+            <tr>
+                <td>{{dish_name}}</td>
+                <td>{{dish_description}}</td>
+                <td>{{dish_ingredients}}</td>
+                <td>{{dish_alergens}}</td>
+                <td>{{dish_price}}</td>
+            </tr>
+            {{/dinner_menu_entries}}
+        </table>
+        {{^dinner_menu_entries}}
+            <div class="alert alert-info" role="alert">
+                No entries yet.
+            </div>
+        {{/dinner_menu_entries}}
+    </div>
+    {{>footer}}
+</body>
+</html>
