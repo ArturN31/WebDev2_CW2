@@ -168,10 +168,6 @@ exports.staff_login = function(req, res) {
     res.render('staff/staff_login');
 }
 
-exports.staff_screen = function(req, res) {
-    res.render('staff/staff_screen');
-}
-
 exports.staff_new_dish = function(req, res) {
     res.render('staff/staff_new_dish');
 }

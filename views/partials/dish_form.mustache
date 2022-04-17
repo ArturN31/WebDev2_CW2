@@ -1,59 +1,63 @@
 <form id="new-dish-form" class="bg-dark text-white my-2">
     <div class="form-group my-2 mx-4">
-      <label for="FormControlInput1">Dish name</label>
-      <input type="text" class="form-control" id="FormControlInput1" placeholder="Enter dish name">
+        <label class="py-2" for="FormControlInput1">Dish name:</label>
+        <input type="text" class="form-control" id="FormControlInput1" placeholder="Enter dish name">
     </div>
+
     <div class="form-group my-2 mx-4">
-        <label for="FormControlTextarea1">Description</label>
+        <label class="py-2" for="FormControlTextarea1">Description:</label>
         <textarea class="form-control" id="FormControlTextarea1" rows="3" placeholder="Enter dish description"></textarea>
     </div>
+
     <div class="form-group my-2 mx-4">
-        <label for="FormControlTextarea2">Ingredients</label>
+        <label class="py-2" for="FormControlTextarea2">Ingredients:</label>
         <textarea class="form-control" id="FormControlTextarea2" rows="3" placeholder="Enter dish ingredients (separating them with comma)"></textarea>
     </div>
+
     <div class="form-group my-2 mx-4">
-        <label for="FormControlSelect1">Allergens <i>(to select multiple hold down CTRL on Windows or Command on Mac)</i></label>
+        <label class="py-2" for="FormControlSelect1">Allergens <i>(to select multiple hold down CTRL on Windows or Command on Mac):</i></label>
         <select multiple class="form-control" id="FormControlSelect1">
-          <option>Celery</option>
-          <option>Cereals containing gluten (barley, oats)</option>
-          <option>Crustaceans (prawns, crabs, lobsters)</option>
-          <option>Eggs</option>
-          <option>Fish</option>
-          <option>Lupin</option>
-          <option>Milk</option>
-          <option>Molluscs (mussels, oysters)</option>
-          <option>Mustard</option>
-          <option>Peanuts</option>
-          <option>Sesame</option>
-          <option>Soybeans</option>
-          <option>Sulphur dioxide and sulphites</option>
-          <option>Tree nuts</option>
+            <option>Celery</option>
+            <option>Cereals containing gluten (barley, oats)</option>
+            <option>Crustaceans (prawns, crabs, lobsters)</option>
+            <option>Eggs</option>
+            <option>Fish</option>
+            <option>Lupin</option>
+            <option>Milk</option>
+            <option>Molluscs (mussels, oysters)</option>
+            <option>Mustard</option>
+            <option>Peanuts</option>
+            <option>Sesame</option>
+            <option>Soybeans</option>
+            <option>Sulphur dioxide and sulphites</option>
+            <option>Tree nuts</option>
         </select>
     </div>
+
+    <div class="form-group my-2 mx-4">
+        <label class="py-2" for="FormControlSelect2">Menu:</label>
+        <select name="menu" id="FormControlSelect2" class="form-select">
+            <option value="lunch_menu">Lunch Menu</option>
+            <option value="dinner_menu">Dinner Menu</option>
+        </select>
+    </div>
+
+    <div class="form-group my-2 mx-4">
+        <label class="py-2" for="FormControlSelect3">Category:</label>
+        <select name="ChoicesForMenus" id="FormControlSelect3" class="form-select">
+        </select>
+    </div>
+
     <div class="row">
         <div class="col my-2 mx-4">
             <div class="form-group">
-                <label for="FormControlInput2">Price</label>
+                <label class="py-2" for="FormControlInput2">Price:</label>
                 <input type="text" class="form-control" id="FormControlInput2" placeholder="Enter price">
             </div>
         </div>
+
         <div class="col my-2 mx-4">
-            <label>Menu:</label>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="radios-menu" id="radios-lunch" value="lunch">
-                <label class="form-check-label" for="radios-lunch">
-                  Lunch
-                </label>
-            </div>
-            <div class="form-check">
-                <input class="form-check-input" type="radio" name="radios-menu" id="radios-dinner" value="dinner">
-                <label class="form-check-label" for="radios-dinner">
-                  Dinner
-                </label>
-            </div>
-        </div>
-        <div class="col my-2 mx-4">
-            <label>Available:</label>
+            <label class="py-2">Available:</label>
             <div class="form-check">
                 <input class="form-check-input" type="radio" name="radios-available" id="radios-yes" value="yes" checked>
                 <label class="form-check-label" for="radios-yes">

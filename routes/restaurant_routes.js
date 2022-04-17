@@ -17,7 +17,6 @@ router.get("/dinner_menu/dinner_desserts", controller.dinner_menu_desserts);
 router.get("/dinner_menu/dinner_beverages", controller.dinner_menu_beverages);
 router.get("/about_us", controller.about_us);
 router.get("/staff_login", controller.staff_login);
-router.get("/staff_screen", controller.staff_screen);
 router.get("/staff_new_dish", controller.staff_new_dish);
 router.get("/staff_edit_menu", controller.staff_edit_menu);
 router.get("/staff_edit_dish", controller.staff_edit_dish);

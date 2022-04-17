@@ -3,8 +3,9 @@ const express = require('express'); //import express
 const app = express(); //use express to create an application
 
 app.use('/css-bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css')); //bootstrap css
-app.use('/css', express.static(__dirname + '/public/css')); //custom css
-app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js')); //bootstrap css
+app.use('/css', express.static(__dirname + '/public/css')); //custom css folder
+app.use('/js-bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/js')); //bootstrap js
+app.use('/js', express.static(__dirname + '/public/js')); //js folder
 app.use('/img', express.static(__dirname + '/public/img')); //image folder
 app.use(express.urlencoded({ extended: false })); //body parser
 
