@@ -1,22 +1,22 @@
-<form id="new-dish-form" class="bg-dark text-white my-2">
+<form method="post" role="form" id="new-dish-form" class="bg-dark text-white my-2">
     <div class="form-group my-2 mx-4">
-        <label class="py-2" for="FormControlInput1">Dish name:</label>
-        <input type="text" class="form-control" id="FormControlInput1" placeholder="Enter dish name">
+        <label class="py-2" for="dish_name">Dish name:</label>
+        <input type="text" class="form-control" id="dish_name" name="dish_name" placeholder="Enter dish name">
     </div>
 
     <div class="form-group my-2 mx-4">
-        <label class="py-2" for="FormControlTextarea1">Description:</label>
-        <textarea class="form-control" id="FormControlTextarea1" rows="3" placeholder="Enter dish description"></textarea>
+        <label class="py-2" for="dish_description">Description:</label>
+        <textarea class="form-control" id="dish_description" name="dish_description" rows="3" placeholder="Enter dish description"></textarea>
     </div>
 
     <div class="form-group my-2 mx-4">
-        <label class="py-2" for="FormControlTextarea2">Ingredients:</label>
-        <textarea class="form-control" id="FormControlTextarea2" rows="3" placeholder="Enter dish ingredients (separating them with comma)"></textarea>
+        <label class="py-2" for="dish_ingredients">Ingredients:</label>
+        <textarea class="form-control" id="dish_ingredients" name="dish_ingredients" rows="3" placeholder="Enter dish ingredients (separating them with comma)"></textarea>
     </div>
 
     <div class="form-group my-2 mx-4">
-        <label class="py-2" for="FormControlSelect1">Allergens <i>(to select multiple hold down CTRL on Windows or Command on Mac):</i></label>
-        <select multiple class="form-control" id="FormControlSelect1">
+        <label class="py-2" for="dish_allergens">Allergens <i>(to select multiple hold down CTRL on Windows or Command on Mac):</i></label>
+        <select multiple class="form-control" id="dish_allergens" name="dish_allergens">
             <option>Celery</option>
             <option>Cereals containing gluten (barley, oats)</option>
             <option>Crustaceans (prawns, crabs, lobsters)</option>
@@ -35,37 +35,37 @@
     </div>
 
     <div class="form-group my-2 mx-4">
-        <label class="py-2" for="FormControlSelect2">Menu:</label>
-        <select name="menu" id="FormControlSelect2" class="form-select">
+        <label class="py-2" for="menu">Menu:</label>
+        <select name="menu" id="menu" class="form-select">
             <option value="lunch_menu">Lunch Menu</option>
             <option value="dinner_menu">Dinner Menu</option>
         </select>
     </div>
 
     <div class="form-group my-2 mx-4">
-        <label class="py-2" for="FormControlSelect3">Category:</label>
-        <select name="ChoicesForMenus" id="FormControlSelect3" class="form-select">
+        <label class="py-2" for="ChoicesForMenus">Category:</label>
+        <select name="ChoicesForMenus" id="ChoicesForMenus" class="form-select">
         </select>
     </div>
 
     <div class="row">
         <div class="col my-2 mx-4">
             <div class="form-group">
-                <label class="py-2" for="FormControlInput2">Price:</label>
-                <input type="text" class="form-control" id="FormControlInput2" placeholder="Enter price">
+                <label class="py-2" for="dish_price">Price:</label>
+                <input type="text" class="form-control" id="dish_price" name="dish_price" placeholder="Enter price">
             </div>
         </div>
 
         <div class="col my-2 mx-4">
             <label class="py-2">Available:</label>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="radios-available" id="radios-yes" value="yes" checked>
+                <input class="form-check-input" type="radio" name="radios_available" id="radios_yes" value="yes" checked>
                 <label class="form-check-label" for="radios-yes">
                     Yes
                 </label>
             </div>
             <div class="form-check">
-                <input class="form-check-input" type="radio" name="radios-available" id="radios-no" value="no">
+                <input class="form-check-input" type="radio" name="radios_available" id="radios_no" value="no">
                 <label class="form-check-label" for="radios-no">
                   No
                 </label>

@@ -6,11 +6,11 @@ var Select_List_Data = {
         // names match option values in controlling select box
         lunch_menu: {
             text: ['Lunch Specials', 'Sandwiches', 'Salads', 'Beverages'],
-            value: ['lunch_specials', 'sandwiches', 'salads', 'beverages']
+            value: ['lunch specials', 'sandwiches', 'salads', 'beverages']
         },
         dinner_menu: {
             text: ['Appetizers', 'Sides', 'Main Course', 'Desserts', 'Beverages'],
-            value: ['appetizers', 'sides', 'main_course', 'desserts', 'beverages']
+            value: ['appetizers', 'sides', 'main course', 'desserts', 'beverages']
         }
     }    
 };

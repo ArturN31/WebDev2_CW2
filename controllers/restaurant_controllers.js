@@ -4,9 +4,8 @@ const lunch_db = new lunchDAO();
 lunch_db.init(); //initialise lunch table
 
 const dinnerDAO = require('../models/dinner_model');
-const lunch_menu = require('../models/lunch_model');
 const dinner_db = new dinnerDAO();
-dinner_db.init(); //initialise table
+dinner_db.init(); //initialise dinner table
 
 exports.homepage = function(req, res) {
     res.render('homepage', {
@@ -170,6 +169,17 @@ exports.staff_login = function(req, res) {
 
 exports.staff_new_dish = function(req, res) {
     res.render('staff/staff_new_dish');
+}
+
+exports.staff_post_new_dish = function(req, res) {
+    console.log('Processing staff_post_new_dish');
+    if(req.body.menu == "lunch_menu") {
+        lunch_db.addEntry(req.body.dish_name, req.body.dish_description, req.body.dish_ingredients, req.body.dish_allergens, req.body.ChoicesForMenus, req.body.dish_price, req.body.radios_available);
+    }
+    else if(req.body.menu == "dinner_menu") {
+        dinner_db.addEntry(req.body.dish_name, req.body.dish_description, req.body.dish_ingredients, req.body.dish_allergens, req.body.ChoicesForMenus, req.body.dish_price, req.body.radios_available);
+    }
+    res.redirect('staff_new_dish');
 }
 
 exports.staff_edit_menu = function(req, res) {
