@@ -20,6 +20,8 @@ router.get('/staff_login', controller.staff_login);
 router.get('/staff_new_dish', controller.staff_new_dish);
 router.get('/staff_edit_menu', controller.staff_edit_menu);
 router.get('/staff_edit_dish', controller.staff_edit_dish);
+router.get('/staff_lunch_menu_edit', controller.staff_lunch_menu_edit);
+router.get('/staff_dinner_menu_edit', controller.staff_dinner_menu_edit);
 
 router.post('/staff_new_dish', controller.staff_post_new_dish);
 

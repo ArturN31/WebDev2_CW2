@@ -168,7 +168,9 @@ exports.staff_login = function(req, res) {
 }
 
 exports.staff_new_dish = function(req, res) {
-    res.render('staff/staff_new_dish');
+    res.render('staff/staff_new_dish', {
+        add_new_dish: 'class="nav-link lead active"'
+    });
 }
 
 exports.staff_post_new_dish = function(req, res) {
@@ -183,7 +185,34 @@ exports.staff_post_new_dish = function(req, res) {
 }
 
 exports.staff_edit_menu = function(req, res) {
-    res.render('staff/staff_edit_menu');
+    res.render('staff/staff_edit_menu', {
+        update_menu: 'class="nav-link lead active"'
+    });
+}
+
+exports.staff_lunch_menu_edit = function(req, res) {
+    lunch_db.getAllEntries() //return all entries
+        .then((lunch_menu) => {
+            res.render('staff/staff_lunch_menu_edit', {
+                'lunch_menu': lunch_menu
+            });
+            console.log('promise resolved - all entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - all entries not displayed', err);
+        })
+}
+exports.staff_dinner_menu_edit = function(req, res) {
+    dinner_db.getAllEntries() //return all entries
+        .then((dinner_menu) => {
+            res.render('staff/staff_dinner_menu_edit', {
+                'dinner_menu': dinner_menu
+            });
+            console.log('promise resolved - all entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - all entries not displayed', err);
+        })
 }
 
 exports.staff_edit_dish = function(req, res) {

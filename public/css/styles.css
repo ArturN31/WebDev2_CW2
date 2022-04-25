@@ -36,21 +36,24 @@ body {
     border: 1px solid #071E22;
     font-family: 'Handlee', cursive;
     text-align: center;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
 /* HOMEPAGE AND ABOUT US CARD */
 .card {
     border-radius: 10px;
     border: 1px solid #071E22;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
 /* CAROUSEL */
 .carousel-inner {
     border-radius: 10px;
     border: 1px solid #071E22;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
-.caousel > img {
+.carousel > img {
     border-radius: 10px;
 }
 
@@ -77,6 +80,7 @@ body {
 .card-menu {
     padding: 0px;
     width: 35rem;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
 .card-img-top {
@@ -87,7 +91,35 @@ body {
 /* ADD NEW DISH */
 #new-dish-form {
     border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
+
+/* TABLES */
+.table {
+    border: 1px solid #071E22;
+    border-collapse: separate !important;
+    border-radius: 20px 20px 0px 0px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
+}
+
+td, th {
+    border-style: none;
+}
+
+th {
+    background-color: #F06449 !important;
+    border: #071E22 1px solid;
+}
+
+#left-th {
+    border-top-left-radius: 20px;
+}
+
+#right-th {
+    border-top-right-radius: 20px;
+}
+
+/* EOF TABLES */
 
 /* FOOTER */
 .vertical-center-footer {
