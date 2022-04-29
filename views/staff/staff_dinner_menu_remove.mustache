@@ -7,47 +7,47 @@
 <body>
     {{>partials/navbar}}
     <div class="container container-customised py-5">
-        <h5 class="d-flex justify-content-center">Lunch Menu</h5>
+        <button type="button" class="btn btn-warning border-dark" onclick="window.location.href='/staff_edit_menu_remove'">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"></path>
+            </svg>
+            Go back
+        </button>
         <div class="row">
-            <div class="col">
-                <form method="post" role="form" id="edit-dish-form" class="bg-dark text-white my-2">
-                    <h5 class="d-flex justify-content-center">Edit dish</h5>
+            <div class="col d-flex justify-content-center">
+                <form method="post" role="form" id="remove-dish-form" class="bg-dark text-white my-2 w-50">
+                    <h5 class="d-flex justify-content-center">Remove dish</h5>
                     <div class="form-group my-2 mx-4">
                         <label class="py-2" for="dish_name">Dish name:</label>
                         <input type="text" class="form-control" id="dish_name" name="dish_name" placeholder="Enter dish name">
                     </div>
-                    <button type="submit" class="btn btn-primary mb-4 mt-2 mx-4">Edit dish</button>
+                    <button type="submit" class="btn btn-primary mb-4 mt-2 mx-4">Remove dish</button>
                     <button type="reset" class="btn btn-secondary mb-4 mt-2">Reset</button>
                 </form>
             </div>
         </div>
         <div class="row">
             <div class="col">
+                <h5 class="d-flex justify-content-center my-2">Dinner Menu</h5>
                 <table class="table table-hover">
                     <tr>
                         <th id="left-th">Dish name:</th>
-                        <th>Description:</th>
-                        <th>Ingredients:</th>
-                        <th>Allergens:</th>
-                        <th>Price:</th>
+                        <th>Category:</th>
                         <th id="right-th">Available:</th>
                     </tr>
-                    {{#lunch_menu}}
+                    {{#dinner_menu}}
                     <tr>
                         <td>{{dish_name}}</td>
-                        <td>{{dish_description}}</td>
-                        <td>{{dish_ingredients}}</td>
-                        <td>{{dish_allergens}}</td>
-                        <td>&#163;{{dish_price}}</td>
+                        <td>{{dish_category}}</td>
                         <td>{{dish_available}}</td>
                     </tr>
-                    {{/lunch_menu}}
+                    {{/dinner_menu}}
                 </table>
-                {{^lunch_menu}}
+                {{^dinner_menu}}
                     <div class="alert alert-info" role="alert">
                         No entries yet.
                     </div>
-                {{/lunch_menu}}
+                {{/dinner_menu}}
             </div>
         </div>
     </div>

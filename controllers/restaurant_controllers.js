@@ -7,6 +7,7 @@ const dinnerDAO = require('../models/dinner_model');
 const dinner_db = new dinnerDAO();
 dinner_db.init(); //initialise dinner table
 
+//MAIN CONTROLLERS
 exports.homepage = function(req, res) {
     res.render('homepage', {
         homepage: 'class="nav-link lead active"', //variable for setting navbar active class when rendering template so that the current page is highlighted on navbar
@@ -162,7 +163,9 @@ exports.about_us = function(req, res) {
         about_us: 'class="nav-link lead active"',
     });
 }
+//EOF MAIN CONTROLLERS
 
+//STAFF CONTROLLERS
 exports.staff_login = function(req, res) {
     res.render('staff/staff_login');
 }
@@ -184,8 +187,57 @@ exports.staff_post_new_dish = function(req, res) {
     res.redirect('staff_new_dish');
 }
 
-exports.staff_edit_menu = function(req, res) {
-    res.render('staff/staff_edit_menu', {
+//REMOVE DISH
+exports.staff_edit_menu_remove = function(req, res) {
+    res.render('staff/staff_edit_menu_remove', {
+        remove_dish: 'class="nav-link lead active"'
+    });
+}
+
+//LUNCH
+exports.staff_lunch_menu_remove = function(req, res) {
+    lunch_db.getAllEntries() //return all entries
+        .then((lunch_menu) => {
+            res.render('staff/staff_lunch_menu_remove', {
+                'lunch_menu': lunch_menu
+            });
+            console.log('promise resolved - all entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - all entries not displayed', err);
+        })
+}
+
+exports.staff_post_lunch_menu_remove = function(req, res) {
+    lunch_db.removeEntry(req.body.dish_name);
+    res.redirect('staff_lunch_menu_remove');
+}
+//EOF LUNCH
+
+//DINNER
+exports.staff_dinner_menu_remove = function(req, res) {
+    dinner_db.getAllEntries() //return all entries
+        .then((dinner_menu) => {
+            res.render('staff/staff_dinner_menu_remove', {
+                'dinner_menu': dinner_menu
+            });
+            console.log('promise resolved - all entries displayed');
+        })
+        .catch((err) => {
+        console.log('promise rejected - all entries not displayed', err);
+        })
+}
+
+exports.staff_post_dinner_menu_remove = function(req, res) {
+    dinner_db.removeEntry(req.body.dish_name);
+    res.redirect('staff_dinner_menu_remove');
+}
+//EOF DINNER
+//EOF REMOVE DISH
+
+//UPDATE DISH
+exports.staff_edit_menu_update = function(req, res) {
+    res.render('staff/staff_edit_menu_update', {
         update_menu: 'class="nav-link lead active"'
     });
 }
@@ -202,6 +254,7 @@ exports.staff_lunch_menu_edit = function(req, res) {
         console.log('promise rejected - all entries not displayed', err);
         })
 }
+
 exports.staff_dinner_menu_edit = function(req, res) {
     dinner_db.getAllEntries() //return all entries
         .then((dinner_menu) => {
@@ -218,3 +271,5 @@ exports.staff_dinner_menu_edit = function(req, res) {
 exports.staff_edit_dish = function(req, res) {
     res.render('staff/staff_edit_dish');
 }
+//EOF UPDATE DISH
+//EOF STAFF CONTROLLERS

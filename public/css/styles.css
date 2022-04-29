@@ -88,8 +88,8 @@ body {
 }
 /* EOF MENU CARD */
 
-/* ADD NEW DISH */
-#new-dish-form {
+/* DISH FORMS */
+#new-dish-form, #remove-dish-form, #update-dish-form  {
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
@@ -118,7 +118,6 @@ th {
 #right-th {
     border-top-right-radius: 20px;
 }
-
 /* EOF TABLES */
 
 /* FOOTER */

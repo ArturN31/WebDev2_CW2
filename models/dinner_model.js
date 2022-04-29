@@ -230,7 +230,7 @@ class dinner_menu {
         return new Promise((resolve, reject) => {
             //use the find() function of the database to get the data,
             //error first callback function, err for error, entries for data
-            this.db.find({}).sort({dish_available: -1, dish_name: 1}).exec(function(err, entries) {
+            this.db.find({}).sort({dish_category: 1, dish_available: -1, dish_name: 1}).exec(function(err, entries) {
                 if(err){
                     reject(err);
                 } else {
@@ -321,6 +321,13 @@ class dinner_menu {
             if (err) {console.log('Error inserting document', dish_name);}
             else {console.log('document inserted into the database', doc);}
         })
+    }
+
+    removeEntry(dish_name) {
+        this.db.remove({ dish_name: dish_name }, {}, function (err, removed) {
+            if (err) {console.log('Error removing document', dish_name);}
+            else {console.log('document removed from database: ', dish_name);}
+        });
     }
 }
 
