@@ -196,7 +196,6 @@ class lunch_menu {
                     reject(err);
                 } else {
                     resolve(entries);
-                    console.log('function getAllEntries returns: ', entries);
                 }
             })
         })
@@ -209,7 +208,6 @@ class lunch_menu {
                     reject(err);
                 } else {
                     resolve(entries);
-                    console.log('function getLunchSpecials returns: ', entries);
                 }
             })
         })
@@ -222,7 +220,6 @@ class lunch_menu {
                     reject(err);
                 } else {
                     resolve(entries);
-                    console.log('function getSandwiches returns: ', entries);
                 }
             })
         })
@@ -235,7 +232,6 @@ class lunch_menu {
                     reject(err);
                 } else {
                     resolve(entries);
-                    console.log('function getSalads returns: ', entries);
                 }
             })
         })
@@ -248,7 +244,6 @@ class lunch_menu {
                     reject(err);
                 } else {
                     resolve(entries);
-                    console.log('function getBeverages returns: ', entries);
                 }
             })
         })
@@ -267,14 +262,31 @@ class lunch_menu {
     
         this.db.insert(entry, function(err, doc) {
             if (err) {console.log('Error inserting document', dish_name);}
-            else {console.log('document inserted into the database', doc);}
         })
     }
 
     removeEntry(dish_name) {
         this.db.remove({ dish_name: dish_name }, {}, function (err, removed) {
             if (err) {console.log('Error removing document', dish_name);}
-            else {console.log('document removed from database: ', dish_name);}
+        });
+    }
+
+    findDish(dish_name) {
+        return new Promise((resolve, reject) => {
+            this.db.find({ dish_name: dish_name }, function (err, docs) {
+                if(err){
+                    reject(err);
+                } else {
+                    resolve(docs);
+                }
+            })
+        })
+    }
+
+    updateDish(dish_name, dish_description, dish_ingredients, dish_allergens, dish_price, dish_available) {
+        this.db.update({ dish_name: dish_name}, { $set: { dish_name: dish_name, dish_description: dish_description, dish_ingredients: dish_ingredients, dish_allergens: dish_allergens, dish_price: dish_price, dish_available: dish_available } }, {}, function (err, numReplaced) {
+            if (err) {console.log('Error updating document', dish_name);}
+            else {console.log('document updated: ', dish_name);}
         });
     }
 }

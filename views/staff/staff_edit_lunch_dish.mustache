@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {{>partials/header}}
+    {{#lunch_menu}}
+    <title>Edit Dish {{dish_name}}</title>
+</head>
+<body>
+    {{>partials/navbar}}
+    <div class="container container-customised py-5">
+        <div class="row">
+            <div class="d-flex justify-content-center">
+                <form method="post" role="form" action="/staff_update_lunch_dish/{{dish_name}}" id="new-dish-form" class="bg-dark text-white my-2">
+                    <div class="form-group my-2 mx-4">
+                        <label class="py-2" for="dish_name">Dish name (Not editable):</label>
+                        <input type="text" class="form-control" id="dish_name" name="dish_name" value="{{dish_name}}" readonly>
+                    </div>
+                
+                    <div class="form-group my-2 mx-4">
+                        <label class="py-2" for="dish_description">Description:</label>
+                        <textarea class="form-control" id="dish_description" name="dish_description" rows="3">{{dish_description}}</textarea>
+                    </div>
+                
+                    <div class="form-group my-2 mx-4">
+                        <label class="py-2" for="dish_ingredients">Ingredients:</label>
+                        <textarea class="form-control" id="dish_ingredients" name="dish_ingredients" rows="3">{{dish_ingredients}}</textarea>
+                    </div>
+                
+                    <div class="form-group my-2 mx-4">
+                        <label class="py-2" for="dish_allergens">Allergens <i>(to select multiple hold down CTRL on Windows or Command on Mac):</i></label>
+                        <select multiple class="form-control" id="dish_allergens" name="dish_allergens">
+                            <option>N/A</option>
+                            <option>Celery</option>
+                            <option>Cereals containing gluten (barley, oats)</option>
+                            <option>Crustaceans (prawns, crabs, lobsters)</option>
+                            <option>Eggs</option>
+                            <option>Fish</option>
+                            <option>Lupin</option>
+                            <option>Milk</option>
+                            <option>Molluscs (mussels, oysters)</option>
+                            <option>Mustard</option>
+                            <option>Peanuts</option>
+                            <option>Sesame</option>
+                            <option>Soybeans</option>
+                            <option>Sulphur dioxide and sulphites</option>
+                            <option>Tree nuts</option>
+                        </select>
+                    </div>
+                
+                    <div class="row">
+                        <div class="col my-2 mx-4">
+                            <div class="form-group">
+                                <label class="py-2" for="dish_price">Price:</label>
+                                <input type="text" class="form-control" id="dish_price" name="dish_price" value="{{dish_price}}">
+                            </div>
+                        </div>
+                
+                        <div class="col my-2 mx-4">
+                            <label class="py-2">Available:</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radios_available" id="radios_yes" value="yes" checked>
+                                <label class="form-check-label" for="radios-yes">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radios_available" id="radios_no" value="no">
+                                <label class="form-check-label" for="radios-no">
+                                  No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary mb-4 mt-2 mx-4">Update dish</button>
+                    <button type="reset" class="btn btn-secondary mb-4 mt-2">Reset</button>
+                </form>
+                {{/lunch_menu}}
+            </div>
+        </div>
+    </div>
+    {{>partials/footer}}
+</body>
+</html>

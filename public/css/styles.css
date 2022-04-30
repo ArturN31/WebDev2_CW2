@@ -89,7 +89,7 @@ body {
 /* EOF MENU CARD */
 
 /* DISH FORMS */
-#new-dish-form, #remove-dish-form, #update-dish-form  {
+#new-dish-form, #remove-dish-form, #edit-dish-form  {
     border-radius: 10px;
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
