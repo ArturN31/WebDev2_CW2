@@ -337,7 +337,6 @@ class dinner_menu {
     updateDish(dish_name, dish_description, dish_ingredients, dish_allergens, dish_price, dish_available) {
         this.db.update({ dish_name: dish_name}, { $set: { dish_name: dish_name, dish_description: dish_description, dish_ingredients: dish_ingredients, dish_allergens: dish_allergens, dish_price: dish_price, dish_available: dish_available } }, {}, function (err, numReplaced) {
             if (err) {console.log('Error updating document', dish_name);}
-            else {console.log('document updated: ', dish_name);}
         });
     }
 }

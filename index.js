@@ -1,6 +1,9 @@
-//vars
+//express setup
 const express = require('express'); //import express
 const app = express(); //use express to create an application
+
+//dotenv package
+require('dotenv').config();
 
 app.use('/css-bootstrap', express.static(__dirname + '/node_modules/bootstrap/dist/css')); //bootstrap css
 app.use('/css', express.static(__dirname + '/public/css')); //custom css folder
@@ -19,6 +22,10 @@ const mustache = require('mustache-express');
 app.engine('mustache', mustache());
 app.set('view engine', 'mustache');
 app.set('views', __dirname+'/views/');
+
+//cookie parser
+const cookie_parser = require('cookie-parser');
+app.use(cookie_parser());
 
 //routes
 const router = require('./routes/restaurant_routes'); //import router

@@ -16,7 +16,9 @@
             <a href="/" class="d-flex justify-content-center">Home</a>
             <a href="/menu" class="d-flex justify-content-center">Menu</a>
             <a href="/about_us" class="d-flex justify-content-center">About us</a>
+            {{^user}}
             <a href="/staff_login" class="d-flex justify-content-center">Staff</a>
+            {{/user}}
         </div>
     </div>
 </footer>
