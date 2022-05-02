@@ -94,6 +94,16 @@ body {
     box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+#dish_allergens::-webkit-scrollbar {
+    display: none;
+  }
+/* Hide scrollbar for IE, Edge and Firefox */
+#dish_allergens {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
 /* TABLES */
 .table {
     border: 1px solid #071E22;

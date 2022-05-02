@@ -10,7 +10,7 @@
     <div class="container container-customised py-5">
         <div class="row">
             <div class="d-flex justify-content-center">
-                <form method="post" role="form" action="/staff_update_dinner_dish/{{dish_name}}" id="new-dish-form" class="bg-dark text-white my-2">
+                <form method="post" role="form" action="/staff_update_dinner_dish/{{dish_name}}" id="new-dish-form" class="bg-dark text-white my-2 needs-validation" novalidate>
                     <div class="form-group my-2 mx-4">
                         <label class="py-2" for="dish_name">Dish name (Not editable):</label>
                         <input type="text" class="form-control" id="dish_name" name="dish_name" value="{{dish_name}}" readonly>
@@ -18,17 +18,29 @@
                 
                     <div class="form-group my-2 mx-4">
                         <label class="py-2" for="dish_description">Description:</label>
-                        <textarea class="form-control" id="dish_description" name="dish_description" rows="3">{{dish_description}}</textarea>
+                        <textarea class="form-control" id="dish_description" name="dish_description" rows="3" required>{{dish_description}}</textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide dish description.
+                        </div>
                     </div>
                 
                     <div class="form-group my-2 mx-4">
                         <label class="py-2" for="dish_ingredients">Ingredients:</label>
-                        <textarea class="form-control" id="dish_ingredients" name="dish_ingredients" rows="3">{{dish_ingredients}}</textarea>
+                        <textarea class="form-control" id="dish_ingredients" name="dish_ingredients" rows="3" required>{{dish_ingredients}}</textarea>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide dish ingredients.
+                        </div>
                     </div>
                 
                     <div class="form-group my-2 mx-4">
                         <label class="py-2" for="dish_allergens">Allergens <i>(to select multiple hold down CTRL on Windows or Command on Mac):</i></label>
-                        <select multiple class="form-control" id="dish_allergens" name="dish_allergens">
+                        <select multiple class="form-control" id="dish_allergens" name="dish_allergens" required>
                             <option>N/A</option>
                             <option>Celery</option>
                             <option>Cereals containing gluten (barley, oats)</option>
@@ -45,13 +57,25 @@
                             <option>Sulphur dioxide and sulphites</option>
                             <option>Tree nuts</option>
                         </select>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide dish allergens.
+                        </div>
                     </div>
                 
                     <div class="row">
                         <div class="col my-2 mx-4">
                             <div class="form-group">
                                 <label class="py-2" for="dish_price">Price:</label>
-                                <input type="text" class="form-control" id="dish_price" name="dish_price" value="{{dish_price}}">
+                                <input type="number" min="0" step="0.01" class="form-control" id="dish_price" name="dish_price" value="{{dish_price}}" required>
+                                <div class="valid-feedback">
+                                    Looks good!
+                                </div>
+                                <div class="invalid-feedback">
+                                    Please provide dish price.
+                                </div>
                             </div>
                         </div>
                 
@@ -79,5 +103,6 @@
         </div>
     </div>
     {{>partials/footer}}
+    <script src="/js/validation.js"></script>
 </body>
 </html>

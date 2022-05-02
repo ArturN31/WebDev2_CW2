@@ -15,11 +15,17 @@
         </button>
         <div class="row">
             <div class="col d-flex justify-content-center">
-                <form method="post" role="form" id="remove-dish-form" class="bg-dark text-white my-2 w-50">
+                <form method="post" role="form" id="remove-dish-form" class="bg-dark text-white my-2 w-50 needs-validation" novalidate>
                     <h5 class="d-flex justify-content-center">Remove dish</h5>
                     <div class="form-group my-2 mx-4">
                         <label class="py-2" for="dish_name">Dish name:</label>
-                        <input type="text" class="form-control" id="dish_name" name="dish_name" placeholder="Enter dish name">
+                        <input type="text" class="form-control" id="dish_name" name="dish_name" placeholder="Enter dish name" required>
+                        <div class="valid-feedback">
+                            Looks good!
+                        </div>
+                        <div class="invalid-feedback">
+                            Please provide dish name.
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary mb-4 mt-2 mx-4">Remove dish</button>
                     <button type="reset" class="btn btn-secondary mb-4 mt-2">Reset</button>
@@ -52,5 +58,6 @@
         </div>
     </div>
     {{>partials/footer}}
+    <script src="/js/validation.js"></script>
 </body>
 </html>

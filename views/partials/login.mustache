@@ -1,14 +1,26 @@
-<form class="bg-dark text-white py-4 px-4 mx-4 rounded" method="post" action="/staff_login">
+<form class="bg-dark text-white py-4 px-4 mx-4 rounded needs-validation" novalidate method="post" action="/staff_login">
     <div class="form-group my-2">
         <label for="username" class="col-sm-2 col-form-label">Username:</label>
         <div class="col-sm-12">
-            <input type="text" class="form-control" id="username" name="username" placeholder="Please enter your username">
+            <input type="text" class="form-control" id="username" name="username" placeholder="Please enter your username" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a username.
+            </div>
         </div>
     </div>
     <div class="form-group my-2">
         <label for="password" class="col-sm-2 col-form-label">Password:</label>
         <div class="col-sm-12">
-            <input type="password" class="form-control" id="password" name="password" placeholder="Please enter your password">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Please enter your password" required>
+            <div class="valid-feedback">
+                Looks good!
+            </div>
+            <div class="invalid-feedback">
+                Please provide a password.
+            </div>
         </div>
     </div>
     <div class="form-group row">
@@ -18,3 +30,4 @@
         </div>
     </div>
 </form>
+<script src="/js/validation.js"></script>

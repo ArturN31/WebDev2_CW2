@@ -4,6 +4,7 @@ const staff_model = new staffDAO();
 staff_model.init();
 const jwt = require('jsonwebtoken');
 
+
 exports.login = function(req, res, next) {
     let username = req.body.username;
     let password = req.body.password;
@@ -12,12 +13,12 @@ exports.login = function(req, res, next) {
         //error
         if(err) {
             console.log('error looking up user' , err);
-            return res.status(401).send();
+            return res.redirect('/staff_login');
         }
         //user does not exist
         if(!user) {
             console.log('user', username, 'not found');
-            return res.status(401).send();
+            return res.redirect('/staff_login');
         }
         //compare password provided in form with stored password
         bcrypt.compare(password, user.password, function (err, result) {
@@ -29,7 +30,8 @@ exports.login = function(req, res, next) {
 
                 next();
             } else {
-                return res.status(403).send();
+                console.log('password not matching');
+                res.redirect('/staff_login');
             }
         });
     });
