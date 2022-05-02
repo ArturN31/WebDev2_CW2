@@ -1,2 +1,2 @@
-{"$$indexCreated":{"fieldName":"user","unique":true,"sparse":false}}
 {"user":"staff","password":"$2b$10$gDEPk.I0aT7tMffTgvxXlOvYuQpqIHGr8yIj6qQfxpm.qvW8mZIYy","_id":"LEtcsZMaOL84k082"}
+{"$$indexCreated":{"fieldName":"user","unique":true,"sparse":false}}
