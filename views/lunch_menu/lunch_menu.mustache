@@ -5,43 +5,66 @@
     <title>Lunch menu</title>
 </head>
 <body>
-    {{>partials/navbar}}
-    <div class="container container-customised py-5">
-        <div class="row">
-            <!-- LUNCH SPECIALS COLUMN -->
-            <div class="col-6">
-                <div class="card">
-                    <p class="d-flex justify-content-center">View our <a href="/lunch_menu/lunch_specials">Lunch Specials</a></p>
+    <div class="bg">
+        {{>partials/navbar}}
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-4 my-2">
+                    <button type="button" class="slide_from_right btn-lg shadow" onclick="window.location.href='/menu'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M10.78 19.03a.75.75 0 01-1.06 0l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 111.06 1.06L5.81 11.5h14.44a.75.75 0 010 1.5H5.81l4.97 4.97a.75.75 0 010 1.06z"></path></svg>
+                        <div class="pt-1">Go back</div>
+                    </button>
                 </div>
+                <div class="col-md-4 my-2"></div>
             </div>
-            <!-- EOF LUNCH SPECIALS COLUMN -->
-
-            <!-- SANDWICHES COLUMN -->
-            <div class="col-6">
-                <div class="card">
-                    <p class="d-flex justify-content-center">View our <a href="/lunch_menu/lunch_sandwiches">Sandwiches</a></p>
+            <div class="row d-flex justify-content-center">
+                <!-- LUNCH SPECIALS COLUMN -->
+                <div class="col-md-4 my-2">
+                    <div class="card shadow">
+                        <img class="card-img-top" src="/img/menu-card/soup.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="d-flex justify-content-center">View our&nbsp;<a href="/lunch_menu/lunch_specials">Lunch Specials</a></p>
+                        </div>
+                    </div>
                 </div>
+                <!-- EOF LUNCH SPECIALS COLUMN -->
+    
+                <!-- SANDWICHES COLUMN -->
+                <div class="col-md-4 my-2">
+                    <div class="card shadow">
+                        <img class="card-img-top" src="/img/menu-card/sandwich.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="d-flex justify-content-center">View our&nbsp;<a href="/lunch_menu/lunch_sandwiches">Sandwiches</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- EOF SANDWICHES COLUMN -->
             </div>
-            <!-- EOF SANDWICHES COLUMN -->
+            <div class="row d-flex justify-content-center">
+                <!-- SANDWICHES COLUMN -->
+                <div class="col-md-4 my-2">
+                    <div class="card shadow">
+                        <img class="card-img-top" src="/img/menu-card/salad.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="d-flex justify-content-center">View our&nbsp;<a href="/lunch_menu/lunch_salads">Salads</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- EOF SANDWICHES COLUMN -->
+    
+                <!-- BEVERAGES COLUMN -->
+                <div class="col-md-4 my-2">
+                    <div class="card shadow">
+                        <img class="card-img-top" src="/img/menu-card/lunch_beverage.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <p class="d-flex justify-content-center">View our&nbsp;<a href="/lunch_menu/lunch_beverages">Beverages</a></p>
+                        </div>
+                    </div>
+                </div>
+                <!-- EOF BEVERAGES COLUMN -->
+            </div>
         </div>
-        <div class="row">
-            <!-- SANDWICHES COLUMN -->
-            <div class="col-6">
-                <div class="card">
-                    <p class="d-flex justify-content-center">View our <a href="/lunch_menu/lunch_salads">Salads</a></p>
-                </div>
-            </div>
-            <!-- EOF SANDWICHES COLUMN -->
-
-            <!-- BEVERAGES COLUMN -->
-            <div class="col-6">
-                <div class="card">
-                    <p class="d-flex justify-content-center">View our <a href="/lunch_menu/lunch_beverages">Beverages</a></p>
-                </div>
-            </div>
-            <!-- EOF BEVERAGES COLUMN -->
-        </div>
+        {{>partials/footer}}
     </div>
-    {{>partials/footer}}
 </body>
 </html>

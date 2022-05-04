@@ -6,103 +6,113 @@
     <title>Edit Dish {{dish_name}}</title>
 </head>
 <body>
-    {{>partials/navbar}}
-    <div class="container container-customised py-5">
-        <div class="row">
-            <div class="d-flex justify-content-center">
-                <form method="post" role="form" action="/staff_update_lunch_dish/{{dish_name}}" id="new-dish-form" class="bg-dark text-white my-2 needs-validation" novalidate>
-                    <div class="form-group my-2 mx-4">
-                        <label class="py-2" for="dish_name">Dish name (Not editable):</label>
-                        <input type="text" class="form-control" id="dish_name" name="dish_name" value="{{dish_name}}" readonly>
-                    </div>
-                
-                    <div class="form-group my-2 mx-4">
-                        <label class="py-2" for="dish_description">Description:</label>
-                        <textarea class="form-control" id="dish_description" name="dish_description" rows="3" required>{{dish_description}}</textarea>
-                        <div class="valid-feedback">
-                            Looks good!
+    <div class="bg">
+        {{>partials/navbar}}
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <button type="button" class="slide_from_right btn-lg shadow" onclick="window.location.href='/staff_lunch_menu_edit'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M10.78 19.03a.75.75 0 01-1.06 0l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 111.06 1.06L5.81 11.5h14.44a.75.75 0 010 1.5H5.81l4.97 4.97a.75.75 0 010 1.06z"></path></svg>
+                        <div class="pt-1">Go back</div>
+                    </button>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <form method="post" role="form" action="/staff_update_lunch_dish/{{dish_name}}" id="new-dish-form" class="bg-dark text-white my-2 shadow needs-validation" novalidate>
+                        <div class="form-group my-2 mx-4">
+                            <label class="py-2" for="dish_name">Dish name (Not editable):</label>
+                            <input type="text" class="form-control" id="dish_name" name="dish_name" value="{{dish_name}}" readonly>
                         </div>
-                        <div class="invalid-feedback">
-                            Please provide dish description.
+                    
+                        <div class="form-group my-2 mx-4">
+                            <label class="py-2" for="dish_description">Description:</label>
+                            <textarea class="form-control" id="dish_description" name="dish_description" rows="3" required>{{dish_description}}</textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide dish description.
+                            </div>
                         </div>
-                    </div>
-                
-                    <div class="form-group my-2 mx-4">
-                        <label class="py-2" for="dish_ingredients">Ingredients:</label>
-                        <textarea class="form-control" id="dish_ingredients" name="dish_ingredients" rows="3" required>{{dish_ingredients}}</textarea>
-                        <div class="valid-feedback">
-                            Looks good!
+                    
+                        <div class="form-group my-2 mx-4">
+                            <label class="py-2" for="dish_ingredients">Ingredients:</label>
+                            <textarea class="form-control" id="dish_ingredients" name="dish_ingredients" rows="3" required>{{dish_ingredients}}</textarea>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide dish ingredients.
+                            </div>
                         </div>
-                        <div class="invalid-feedback">
-                            Please provide dish ingredients.
+                    
+                        <div class="form-group my-2 mx-4">
+                            <label class="py-2" for="dish_allergens"><p>Allergens:</p><p style="margin-top: -15px; margin-bottom: 10px;"><i>(To select multiple hold down CTRL on Windows or Command on Mac.</p><p style="margin-top: -15px; margin-bottom: 0px;">Use mouse scroll to view options below.)</p></i></label>
+                            <select multiple class="form-control" id="dish_allergens" name="dish_allergens" required>
+                                <option>N/A</option>
+                                <option>Celery</option>
+                                <option>Cereals containing gluten (barley, oats)</option>
+                                <option>Crustaceans (prawns, crabs, lobsters)</option>
+                                <option>Eggs</option>
+                                <option>Fish</option>
+                                <option>Lupin</option>
+                                <option>Milk</option>
+                                <option>Molluscs (mussels, oysters)</option>
+                                <option>Mustard</option>
+                                <option>Peanuts</option>
+                                <option>Sesame</option>
+                                <option>Soybeans</option>
+                                <option>Sulphur dioxide and sulphites</option>
+                                <option>Tree nuts</option>
+                            </select>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide dish allergens.
+                            </div>
                         </div>
-                    </div>
-                
-                    <div class="form-group my-2 mx-4">
-                        <label class="py-2" for="dish_allergens">Allergens <i>(to select multiple hold down CTRL on Windows or Command on Mac):</i></label>
-                        <select multiple class="form-control" id="dish_allergens" name="dish_allergens" required>
-                            <option>N/A</option>
-                            <option>Celery</option>
-                            <option>Cereals containing gluten (barley, oats)</option>
-                            <option>Crustaceans (prawns, crabs, lobsters)</option>
-                            <option>Eggs</option>
-                            <option>Fish</option>
-                            <option>Lupin</option>
-                            <option>Milk</option>
-                            <option>Molluscs (mussels, oysters)</option>
-                            <option>Mustard</option>
-                            <option>Peanuts</option>
-                            <option>Sesame</option>
-                            <option>Soybeans</option>
-                            <option>Sulphur dioxide and sulphites</option>
-                            <option>Tree nuts</option>
-                        </select>
-                        <div class="valid-feedback">
-                            Looks good!
-                        </div>
-                        <div class="invalid-feedback">
-                            Please provide dish allergens.
-                        </div>
-                    </div>
-                
-                    <div class="row">
-                        <div class="col my-2 mx-4">
-                            <div class="form-group">
-                                <label class="py-2" for="dish_price">Price:</label>
-                                <input type="number" min="0" step="0.01" class="form-control" id="dish_price" name="dish_price" value="{{dish_price}}" required>
-                                <div class="valid-feedback">
-                                    Looks good!
+                    
+                        <div class="row">
+                            <div class="col my-2 mx-4">
+                                <div class="form-group">
+                                    <label class="py-2" for="dish_price">Price:</label>
+                                    <input type="number" min="0" step="0.01" class="form-control" id="dish_price" name="dish_price" value="{{dish_price}}" required>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Please provide dish price.
+                                    </div>
                                 </div>
-                                <div class="invalid-feedback">
-                                    Please provide dish price.
+                            </div>
+                    
+                            <div class="col my-2 mx-4">
+                                <label class="py-2">Available:</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radios_available" id="radios_yes" value="yes" checked>
+                                    <label class="form-check-label" for="radios-yes">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="radios_available" id="radios_no" value="no">
+                                    <label class="form-check-label" for="radios-no">
+                                      No
+                                    </label>
                                 </div>
                             </div>
                         </div>
-                
-                        <div class="col my-2 mx-4">
-                            <label class="py-2">Available:</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="radios_available" id="radios_yes" value="yes" checked>
-                                <label class="form-check-label" for="radios-yes">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="radios_available" id="radios_no" value="no">
-                                <label class="form-check-label" for="radios-no">
-                                  No
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-primary mb-4 mt-2 mx-4">Update dish</button>
-                    <button type="reset" class="btn btn-secondary mb-4 mt-2">Reset</button>
-                </form>
-                {{/lunch_menu}}
+                        <button type="submit" class="btn btn-primary mb-4 mt-2 mx-4">Update dish</button>
+                        <button type="reset" class="btn btn-secondary mb-4 mt-2">Reset</button>
+                    </form>
+                    {{/lunch_menu}}
+                </div>
             </div>
         </div>
+        {{>partials/footer}}
+        <script src="/js/validation.js"></script>
     </div>
-    {{>partials/footer}}
-    <script src="/js/validation.js"></script>
 </body>
 </html>

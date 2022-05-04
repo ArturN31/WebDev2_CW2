@@ -5,67 +5,103 @@
     <title>Edit Lunch Menu Dish</title>
 </head>
 <body>
-    {{>partials/navbar}}
-    <div class="container container-customised py-5">
-        <button type="button" class="btn btn-warning border-dark" onclick="window.location.href='/staff_edit_menu_update'">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-                <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z"></path>
-            </svg>
-            Go back
-        </button>
-        <div class="row">
-            <div class="col d-flex justify-content-center">
-                <form method="post" role="form" id="edit-dish-form" class="bg-dark text-white my-2 w-50 needs-validation" novalidate>
-                    <h5 class="d-flex justify-content-center">Edit dish</h5>
-                    <div class="form-group my-2 mx-4">
-                        <label class="py-2" for="dish_name">Dish name:</label>
-                        <input type="text" class="form-control" id="dish_name" name="dish_name" placeholder="Enter dish name" required>
-                        <div class="valid-feedback">
-                            Looks good!
+    <div class="bg">
+        {{>partials/navbar}}
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <button type="button" class="slide_from_right btn-lg shadow" onclick="window.location.href='/staff_edit_menu_update'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M10.78 19.03a.75.75 0 01-1.06 0l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 111.06 1.06L5.81 11.5h14.44a.75.75 0 010 1.5H5.81l4.97 4.97a.75.75 0 010 1.06z"></path></svg>
+                        <div class="pt-1">Go back</div>
+                    </button>
+                </div>
+            </div>
+            <div class="wrapper">
+                <h5 class="d-flex justify-content-center">Lunch Menu</h5>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    <form method="post" role="form" id="edit-dish-form" class="bg-dark text-white my-2 shadow needs-validation" novalidate>
+                        <h5 class="d-flex justify-content-center">Edit dish</h5>
+                        <div class="form-group my-2 mx-4">
+                            <label class="py-2" for="dish_name">Dish name:</label>
+                            <input type="text" class="form-control" id="dish_name" name="dish_name" placeholder="Enter dish name" required>
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                Please provide dish name.
+                            </div>
                         </div>
-                        <div class="invalid-feedback">
-                            Please provide dish name.
+                        <button type="submit" class="btn btn-primary mb-4 mt-2 mx-4">Edit dish</button>
+                        <button type="reset" class="btn btn-secondary mb-4 mt-2">Reset</button>
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="wrapper">
+                        <div class="table">
+                          <div class="table-row header">
+                            <div class="cell">
+                                Dish name:
+                            </div>
+                            <div class="cell">
+                                Description:
+                            </div>
+                            <div class="cell">
+                                Ingredients:
+                            </div>
+                            <div class="cell">
+                                Allergens:
+                            </div>
+                            <div class="cell">
+                                Category:
+                            </div>
+                            <div class="cell">
+                                Price:
+                            </div>
+                            <div class="cell">
+                                Available:
+                            </div>
+                          </div>
+                          {{#lunch_menu}}
+                            <div class="table-row">
+                                <div class="cell" data-title="dish name">
+                                    {{dish_name}}
+                                </div>
+                                <div class="cell" data-title="description">
+                                    {{dish_description}}
+                                </div>
+                                <div class="cell" data-title="ingredients">
+                                    {{dish_ingredients}}
+                                </div>
+                                <div class="cell" data-title="allergens">
+                                    {{dish_allergens}}
+                                </div>
+                                <div class="cell" data-title="category">
+                                    {{dish_category}}
+                                </div>
+                                <div class="cell" data-title="price">
+                                    {{dish_price}}
+                                </div>
+                                <div class="cell" data-title="available">
+                                    {{dish_available}}
+                                </div>
+                            </div>
+                          {{/lunch_menu}}            
                         </div>
+                        {{^lunch_menu}}
+                            <div class="alert alert-info" role="alert">
+                                No entries yet.
+                            </div>
+                        {{/lunch_menu}}
                     </div>
-                    <button type="submit" class="btn btn-primary mb-4 mt-2 mx-4">Edit dish</button>
-                    <button type="reset" class="btn btn-secondary mb-4 mt-2">Reset</button>
-                </form>
+                </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col">
-                <h5 class="d-flex justify-content-center my-2">Lunch Menu</h5>
-                <table class="table table-hover">
-                    <tr>
-                        <th id="left-th">Dish name:</th>
-                        <th>Description:</th>
-                        <th>Ingredients:</th>
-                        <th>Allergens:</th>
-                        <th>Category:</th>
-                        <th>Price:</th>
-                        <th id="right-th">Available:</th>
-                    </tr>
-                    {{#lunch_menu}}
-                    <tr>
-                        <td>{{dish_name}}</td>
-                        <td>{{dish_description}}</td>
-                        <td>{{dish_ingredients}}</td>
-                        <td>{{dish_allergens}}</td>
-                        <td>{{dish_category}}</td>
-                        <td>&#163;{{dish_price}}</td>
-                        <td>{{dish_available}}</td>
-                    </tr>
-                    {{/lunch_menu}}
-                </table>
-                {{^lunch_menu}}
-                    <div class="alert alert-info" role="alert">
-                        No entries yet.
-                    </div>
-                {{/lunch_menu}}
-            </div>
-        </div>
+        {{>partials/footer}}
+        <script src="/js/validation.js"></script>
     </div>
-    {{>partials/footer}}
-    <script src="/js/validation.js"></script>
 </body>
 </html>

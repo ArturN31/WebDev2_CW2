@@ -5,15 +5,17 @@
     <title>Add new dish</title>
 </head>
 <body>
-    {{>partials/navbar}}
-    <div class="container container-customised py-5">
-        <div class="row">
-            <div class="d-flex justify-content-center">
-                {{>partials/dish_form}}
+    <div class="bg">
+        {{>partials/navbar}}
+        <div class="container py-5">
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-8">
+                    {{>partials/dish_form}}
+                </div>
             </div>
         </div>
+        {{>partials/footer}}
+        <script src="/js/dish_form_select.js"></script> {{!Form select JS}}
     </div>
-    {{>partials/footer}}
-    <script src="/js/dish_form_select.js"></script> {{!Form select JS}}
 </body>
 </html>

@@ -199,7 +199,6 @@ exports.about_us = function(req, res) {
     }
 
     exports.staff_post_new_dish = function(req, res) {
-        console.log('Processing staff_post_new_dish');
         if(req.body.menu == "lunch_menu") {
             lunch_db.addEntry(req.body.dish_name, req.body.dish_description, req.body.dish_ingredients, req.body.dish_allergens, req.body.ChoicesForMenus, req.body.dish_price, req.body.radios_available);
         }
@@ -224,6 +223,7 @@ exports.about_us = function(req, res) {
                 .then((lunch_menu) => {
                     res.render('staff/staff_lunch_menu_remove', {
                         'lunch_menu': lunch_menu,
+                        remove_dish: 'class="nav-link lead active"',
                         user: req.cookies.jwt
                     });
                 })
@@ -244,6 +244,7 @@ exports.about_us = function(req, res) {
                 .then((dinner_menu) => {
                     res.render('staff/staff_dinner_menu_remove', {
                         'dinner_menu': dinner_menu,
+                        remove_dish: 'class="nav-link lead active"',
                         user: req.cookies.jwt
                     });
                 })
@@ -273,6 +274,7 @@ exports.about_us = function(req, res) {
                 .then((lunch_menu) => {
                     res.render('staff/staff_lunch_menu_edit', {
                         'lunch_menu': lunch_menu,
+                        update_menu: 'class="nav-link lead active"',
                         user: req.cookies.jwt
                     });
                 })
@@ -286,6 +288,7 @@ exports.about_us = function(req, res) {
                 .then((lunch_menu) => {
                     res.render('staff/staff_edit_lunch_dish', {
                         'lunch_menu': lunch_menu,
+                        update_menu: 'class="nav-link lead active"',
                         user: req.cookies.jwt
                     });
                 })
@@ -306,6 +309,7 @@ exports.about_us = function(req, res) {
                 .then((dinner_menu) => {
                     res.render('staff/staff_dinner_menu_edit', {
                         'dinner_menu': dinner_menu,
+                        update_menu: 'class="nav-link lead active"',
                         user: req.cookies.jwt
                     });
                 })

@@ -1,13 +1,21 @@
-/* BAR ABOVE NAVBAR */
-#navbar-top {
-    height: 100px;
-    background-color: #F06449; /* Orange Soda - colour */
-    font-family: 'Handlee', cursive;
+body {
+    background: url(/img/bg.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-body {
-    background-color: #EDE6E3;
+/* NAVBAR */
+#navbar-top {
+    height: 100px;
 }
+
+.navbar {
+    font-family: 'Kodchasan', sans-serif;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/* EOF NAVBAR */
 
 /* TEXT */
 .lato-font {
@@ -23,56 +31,33 @@ body {
 }
 /* EOF TEXT */
 
-/* MAIN BODY */
-.container-customised {
-    background-color: #dbdbdb;
-    border-left: 1px solid rgb(7, 30, 34, 0.15);
-    border-right: 1px solid rgb(7, 30, 34, 0.15); 
-}
-
 /* HOMEPAGE AND ABOUT US WELCOME JUMBOTRON */
 .jumbotron {
+    background-color: #0a2a30;
     border-radius: 10px;
     border: 1px solid #071E22;
     font-family: 'Handlee', cursive;
+    color: white;
     text-align: center;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
 /* HOMEPAGE AND ABOUT US CARD */
 .card {
+    background-color: #0a2a30;
+    color: white;
+    font-family: 'Lato', sans-serif;
     border-radius: 10px;
     border: 1px solid #071E22;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
 /* CAROUSEL */
 .carousel-inner {
     border-radius: 10px;
     border: 1px solid #071E22;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
 .carousel > img {
     border-radius: 10px;
-}
-
-@media only screen and (max-width: 2560px) {
-    #carousel-custom {
-      width: 50%;
-    }
-}
-
-@media only screen and (max-width: 1200px) {
-    #carousel-custom {
-      width: 69%;
-    }
-}
-
-@media only screen and (max-width: 750px) {
-    #carousel-custom {
-      width: 100%;
-    }
 }
 /* EOF CAROUSEL */
 
@@ -80,7 +65,6 @@ body {
 .card-menu {
     padding: 0px;
     width: 35rem;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
 .card-img-top {
@@ -89,9 +73,10 @@ body {
 /* EOF MENU CARD */
 
 /* DISH FORMS */
-#new-dish-form, #remove-dish-form, #edit-dish-form  {
+#new-dish-form, #remove-dish-form, #edit-dish-form, #login-form  {
+    background-color: #0a2a30;
+    font-family: 'Lato', sans-serif;
     border-radius: 10px;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
 }
 
 /* Hide scrollbar for Chrome, Safari and Opera */
@@ -103,32 +88,7 @@ body {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
-
-/* TABLES */
-.table {
-    border: 1px solid #071E22;
-    border-collapse: separate !important;
-    border-radius: 20px 20px 0px 0px;
-    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.28);
-}
-
-td, th {
-    border-style: none;
-}
-
-th {
-    background-color: #F06449 !important;
-    border: #071E22 1px solid;
-}
-
-#left-th {
-    border-top-left-radius: 20px;
-}
-
-#right-th {
-    border-top-right-radius: 20px;
-}
-/* EOF TABLES */
+/* EOF DISH FORMS */
 
 /* FOOTER */
 .vertical-center-footer {
@@ -145,3 +105,168 @@ footer p {
     color: #F06449;
 }
 /* EOF FOOTER */
+
+.shadow {
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.55) !important;
+}
+
+/* GO BACK BUTTON */
+.slide_from_right  {
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+    background: #F06449;
+    color: #fff;
+    border: 1px solid #000000;
+    border-radius: 15px !important;
+    padding: 0.85em 0.75em;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    opacity: 0.9;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+  
+.slide_from_right:hover {
+    color: #000000;
+    text-shadow: -2px 0 #ecf0f1, 0 2px #ecf0f1, 2px 0 #ecf0f1, 0 -2px #ecf0f1;
+}
+  
+.slide_from_right::after {
+    content: "";
+    background: #ecf0f1;
+    position: absolute;
+    z-index: -1;
+    padding: 0.85em 0.75em;
+    display: block;
+}
+  
+button[class^="slide"]::after {
+    transition: all 0.35s;
+}
+  
+button[class^="slide"]:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transition: all 0.35s;
+}
+
+button.slide_from_right::after {
+    top: 0;
+    bottom: 0;
+    left: 100%;
+    right: -100%;
+}
+
+/* EOF GO BACK BUTTON*/
+
+/* TABLE */
+.wrapper {
+    margin: 0 auto;
+}
+  
+.table {
+    box-shadow: 0px 0px 20px 6px rgba(0, 0, 0, 0.55) !important;
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+    font-family: 'Kodchasan', sans-serif;
+    opacity: 0.9;
+}
+
+@media screen and (max-width: 1000px) {
+    .table {
+      display: block;
+    }
+}
+  
+.table-row {
+    display: table-row;
+    background: #f6f6f6;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.table-row.header {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    background: #F06449;
+}
+
+@media screen and (max-width: 1000px) {
+    .table-row {
+      padding: 14px 0 7px;
+      display: block;
+    }
+    .table-row.header {
+      padding: 0;
+      height: 6px;
+    }
+    .table-row.header .cell {
+      display: none;
+    }
+    .table-row .cell {
+      margin-bottom: 10px;
+    }
+    .table-row .cell:before {
+      margin-bottom: 3px;
+      content: attr(data-title);
+      min-width: 98px;
+      font-size: 10px;
+      line-height: 10px;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: #969696;
+      display: block;
+    }
+}
+
+.cell {
+    padding: 6px 12px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 1000px) {
+    .cell {
+      padding: 2px 16px;
+      display: block;
+    }
+}
+/* EOF TABLE */
+
+.wrapper h5 {
+    font-family: 'Kodchasan', sans-serif;
+    font-size: 45px;
+    color: #ffffff;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+#navbar-top h1 {
+    font-family: 'Rancho', cursive;
+    color: #F06449;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    font-size: 90px;
+}
+
+.jumbotron h1 {
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+.card {
+    font-family: 'Kodchasan', sans-serif;
+    text-align: justify;
+    text-align-last: center;
+}
+
+.card h5 {
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+form label,input,textarea,select,button,h5 {
+    font-family: 'Kodchasan', sans-serif;
+}

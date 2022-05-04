@@ -5,37 +5,65 @@
     <title>Lunch menu - Beverages</title>
 </head>
 <body>
-    {{>partials/navbar}}
-    <div class="container container-customised py-5">
-        <div class="row d-flex justify-content-center">
-            <div class="col">
-                <table class="table table-hover">
+    <div class="bg">
+        {{>partials/navbar}}
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4 my-2">
+                    <button type="button" class="slide_from_right btn-lg shadow" onclick="window.location.href='/lunch_menu'">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24"><path fill-rule="evenodd" d="M10.78 19.03a.75.75 0 01-1.06 0l-6.25-6.25a.75.75 0 010-1.06l6.25-6.25a.75.75 0 111.06 1.06L5.81 11.5h14.44a.75.75 0 010 1.5H5.81l4.97 4.97a.75.75 0 010 1.06z"></path></svg>
+                        <div class="pt-1">Go back</div>
+                    </button>
+                </div>
+                <div class="wrapper">
                     <h5 class="d-flex justify-content-center">Beverages</h5>
-                    <tr>
-                        <th id="left-th">Dish name:</th>
-                        <th>Description:</th>
-                        <th>Ingredients:</th>
-                        <th>Allergens:</th>
-                        <th id="right-th">Price:</th>
-                    </tr>
-                    {{#beverages}}
-                    <tr>
-                        <td>{{dish_name}}</td>
-                        <td>{{dish_description}}</td>
-                        <td>{{dish_ingredients}}</td>
-                        <td>{{dish_allergens}}</td>
-                        <td>&#163;{{dish_price}}</td>
-                    </tr>
-                    {{/beverages}}
-                </table>
-                {{^beverages}}
-                    <div class="alert alert-info" role="alert">
-                        No entries yet.
+                    <div class="table">
+                      <div class="table-row header">
+                        <div class="cell">
+                            Dish name:
+                        </div>
+                        <div class="cell">
+                            Description:
+                        </div>
+                        <div class="cell">
+                            Ingredients:
+                        </div>
+                        <div class="cell">
+                            Allergens:
+                        </div>
+                        <div class="cell">
+                            Price:
+                        </div>
+                      </div>
+                      {{#beverages}}
+                        <div class="table-row">
+                            <div class="cell" data-title="dish name">
+                                {{dish_name}}
+                            </div>
+                            <div class="cell" data-title="description">
+                                {{dish_description}}
+                            </div>
+                            <div class="cell" data-title="ingredients">
+                                {{dish_ingredients}}
+                            </div>
+                            <div class="cell" data-title="allergens">
+                                {{dish_allergens}}
+                            </div>
+                            <div class="cell" data-title="price">
+                                &#163;{{dish_price}}
+                            </div>
+                        </div>
+                      {{/beverages}}            
                     </div>
-                {{/beverages}}
+                    {{^beverages}}
+                        <div class="alert alert-info" role="alert">
+                            No entries yet.
+                        </div>
+                    {{/beverages}}
+                </div>
             </div>
         </div>
+        {{>partials/footer}}
     </div>
-    {{>partials/footer}}
 </body>
 </html>
