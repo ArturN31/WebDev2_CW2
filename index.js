@@ -47,4 +47,6 @@ app.use(function(req, res) {
 // })
 
 //Heroku port listen
-app.listen(process.env.PORT);
+app.listen(PORT, () => {
+    console.log(`Server is listening on port ${PORT}`);
+});
