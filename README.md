@@ -18,3 +18,6 @@ Type ```node index.js``` or ```nodemon``` into the CLI.
 - **_Access upon authorization_** - Remove dish page allows choosing Lunch or Dinner menu, then input dish name into a form and remove a dish upon submitting it. Additionally, upon choosing a menu, all dishes are displayed.
 - **_Access upon authorization_** - Update the menu page allows choosing Lunch or Dinner menu, then input dish name into a form and submit it to edit the dish. Additionally, upon choosing a menu, all dishes are displayed.
 - Bootstrap form validation that disables submission until all conditions are met. Additionally, real time feedback is provided for users.
+
+## App deployed - preview
+[Click here to view](https://webdev-cw2.herokuapp.com/)
