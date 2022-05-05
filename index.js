@@ -2,6 +2,9 @@
 const express = require('express'); //import express
 const app = express(); //use express to create an application
 
+//Heroku port
+const PORT = process.env.PORT || 3000;
+
 //dotenv package
 require('dotenv').config();
 
@@ -39,6 +42,9 @@ app.use(function(req, res) {
 })
 
 //listen on port 3000
-app.listen(3000, () => {
-    console.log('Server started on port 3000. Ctrl^c to quit.');
-})
+// app.listen(3000, () => {
+//     console.log('Server started on port 3000. Ctrl^c to quit.');
+// })
+
+//Heroku port listen
+app.listen(process.env.PORT);
