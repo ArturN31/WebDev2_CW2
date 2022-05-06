@@ -1,15 +1,18 @@
 ## How to run the web application?
-### Clone the repository
+### Clone the repository.
 Type ```git clone https://github.com/ArturN31/WebDev2_CW2.git``` into the CLI.
 
-### Move into the clone of repository
+### Move into the clone of repository.
 Type ```cd path/to/WebDev2_CW2``` into the CLI.
 
-### Install project dependencies
+### Install project dependencies.
 Type ```npm install``` into the CLI.
 
-### Run the web server
+### Run the web server.
 Type ```node index.js``` or ```nodemon``` into the CLI.
+
+### Visit the website in the browser.
+```http://localhost:3000/```
 
 ## List of implemented features
 - Menu page allows choosing Lunch or Dinner menu, then category, e.g., lunch specials, salads, etc. Upon selection, available dishes are retrieved from a database and displayed to the user.
@@ -21,3 +24,8 @@ Type ```node index.js``` or ```nodemon``` into the CLI.
 
 ## App deployed - preview
 [Click here to view](https://webdev-cw2.herokuapp.com/)
+
+Staff sign in details:
+|Username:|Password:|
+|---------|---------|
+|staff    |staff123 |
