@@ -25,6 +25,7 @@ Type ```node index.js``` or ```nodemon``` into the CLI.
 ## App deployed - preview
 [Click here to view](https://webdev-cw2.herokuapp.com/)
 
-Staff login details:
-Username: staff
-Password: staff123
+Staff sign in details:
+|Username:|Password:|
+|---------|---------|
+|staff    |staff123 |
